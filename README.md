@@ -98,6 +98,36 @@ right when the stem group unfreezes, the simplest next step is
 - `checkpoints/{backbone}_fold{i}.pt` — best checkpoint per fold (state_dict + val AUC + epoch)
 - `submission.csv` — ensembled predictions (`filename`, `predicted_probability`, `predicted_label`) on the unlabeled Testing Images
 
+## 📊 Model Performance Evaluation
+
+### Out-of-Fold (5-Fold Cross-Validation) Results
+
+| Metric | Overall (OOF) | Per-Fold Mean ± Std |
+| :--- | :---: | :---: |
+| **ROC-AUC (Primary Metric)** | **0.8218** | **0.8247 ± 0.0133** |
+| **F1 Score** | **0.7605** | — |
+| **Accuracy** | **0.7473** | — |
+| **Sensitivity (Disease Recall)** | **0.7112** | — |
+| **Specificity (Normal Recall)** | **0.7939** | — |
+
+---
+
+### Detailed Class Breakdown
+
+| Class | Precision | Recall | F1-Score | Support |
+| :--- | :---: | :---: | :---: | :---: |
+| **Normal** | 0.68 | 0.79 | 0.73 | 3,052 |
+| **Disease** | 0.82 | 0.71 | 0.76 | 3,948 |
+| **Macro Average** | **0.75** | **0.75** | **0.75** | **7,000** |
+| **Weighted Average** | **0.76** | **0.75** | **0.75** | **7,000** |
+
+---
+
+### Visual Diagnostic Evaluation
+
+> **Left:** Out-of-Fold Confusion Matrix evaluated at decision threshold $t = 0.5$ ($N = 7,000$).  
+> **Right:** Overall Out-of-Fold Receiver Operating Characteristic (ROC) curve yielding an AUC of **0.822**.
+
 ## Known limitations
 
 - Metrics are out-of-fold on ODIR-5K only — there's no external, independently-labeled
