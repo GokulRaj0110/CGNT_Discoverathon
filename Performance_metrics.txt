@@ -1,0 +1,17 @@
+Out-of-fold (5-fold CV) performance:
+
+ROC-AUC (primary):  0.8218   (per-fold mean 0.8247 ± 0.0133)
+Accuracy:            0.7473
+Sensitivity (Disease recall): 0.7112
+Specificity (Normal recall):  0.7939
+F1:                   0.7605
+
+              precision    recall  f1-score   support
+
+      Normal       0.68      0.79      0.73      3052
+     Disease       0.82      0.71      0.76      3948
+
+    accuracy                           0.75      7000
+   macro avg       0.75      0.75      0.75      7000
+weighted avg       0.76      0.75      0.75      7000
+
