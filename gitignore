@@ -1,0 +1,22 @@
+# Dataset (downloaded locally via the setup cell / script — see README "Data setup")
+data/
+ODIR-5K/
+
+# Model artifacts
+checkpoints/
+*.pt
+*.pth
+*.onnx
+
+# Predictions
+submission.csv
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
